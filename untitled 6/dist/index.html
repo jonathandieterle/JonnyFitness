@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jonny Fitness - Startseite</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0a1f44;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #081a36;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        nav ul li a:hover {
+            background: #1e3a70;
+        }
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
+            margin: 20px auto;
+            max-width: 800px;
+            color: #0a1f44;
+        }
+        footer {
+            background-color: #081a36;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            width: 100%;
+        }
+        .impressum {
+            font-size: 0.8em;
+            text-align: center;
+            padding: 10px;
+            background-color: #1e3a70;
+            color: white;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        .button {
+            display: inline-block;
+            background-color: #1e3a70;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .button:hover {
+            background-color: #3a5ca0;
+        }
+    </style>
+    <script>
+        function loadPage(page) {
+            let content = document.getElementById("content");
+            let pages = {
+                "standort": `<div class='container'><h2>Unser Standort</h2><p>Hier findest du unser Fitnessstudio in Mannheim.</p><a href='https://www.google.com/maps/search/Fitnessstudio+Mannheim' target='_blank' class='button'>Auf Google Maps anzeigen</a></div>`,
+                "index": `<div class='container'><h2>Willkommen bei Jonny Fitness</h2><p>Erlebe funktionelles Training auf höchstem Niveau in einer motivierenden Atmosphäre.</p><img src='https://i.imgur.com/TQyuheU.jpg' alt='Fitnessstudio' style='width:100%; border-radius:10px; margin-top:15px;'></div>`,
+                "kurse": `<div class='container'><h2>Unsere Kurse</h2><ul><li>CrossFit Basics - Einführung in die Grundlagen</li><li>HIIT Training - Maximale Leistung in kurzer Zeit</li><li>Gewichtheben - Technik und Kraftaufbau</li><li>Mobility & Recovery - Flexibilität und Regeneration</li></ul></div>`,
+                "oeffnungszeiten": `<div class='container'><h2>Öffnungszeiten</h2><ul><li>Montag - Freitag: 06:00 - 22:00 Uhr</li><li>Samstag: 08:00 - 20:00 Uhr</li><li>Sonntag: 09:00 - 18:00 Uhr</li></ul></div>`,
+                "trainer": `<div class='container'><h2>Unsere Trainer</h2><ul><img src='https://i.imgur.com/YnZltBw.jpg' alt='Trainer Bild' style='width:80%; border-radius:10px; margin-bottom:15px;'><li>Alexander Schmidt - CrossFit Experte</li><li>Lisa Meier - Mobility & Yoga</li><li>Michael Wagner - Gewichtheben & Krafttraining</li></ul></div>`,
+                "ueber-uns": `<div class='container'><h2>Über Uns</h2><p>Jonny Fitness wurde mit der Vision gegründet, eine inspirierende Umgebung für alle Fitnesslevels zu schaffen.</p></div>`,
+                "kontakt": `<div class='container'><h2>Kontakt</h2><p>Hast du Fragen? Schreib uns eine Nachricht!</p><form><label for='name'>Name:</label><input type='text' id='name' name='name' required><label for='email'>E-Mail:</label><input type='email' id='email' name='email' required><label for='message'>Nachricht:</label><textarea id='message' name='message' required></textarea><button type='submit'>Senden</button></form></div>`
+            };
+            content.innerHTML = pages[page] || pages["index"];
+        }
+        document.addEventListener("DOMContentLoaded", () => { loadPage("index"); });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Jonny Fitness</h1>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="loadPage('index')">Startseite</a></li>
+                <li><a href="#" onclick="loadPage('kurse')">Kurse</a></li>
+                <li><a href="#" onclick="loadPage('oeffnungszeiten')">Öffnungszeiten</a></li>
+                <li><a href="#" onclick="loadPage('trainer')">Trainer</a></li>
+                <li><a href="#" onclick="loadPage('ueber-uns')">Über Uns</a></li>
+                <li><a href="#" onclick="loadPage('kontakt')">Kontakt</a></li>
+            <li><a href="#" onclick="loadPage('standort')">Unser Standort</a></li></ul></nav>
+    </header>
+    <main id="content"></main>
+    <footer>
+        <p>&copy; 2025 Jonny Fitness</p>
+        <div class="impressum">
+            <p><strong>Impressum:</strong> Jonathan Dieterle | Matrikelnummer: 3019331</p>
+        </div>
+    </footer>
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
